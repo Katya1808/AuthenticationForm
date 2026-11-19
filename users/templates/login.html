@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+    <h1>Login page</h1>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Login</button>
+
+    </form>
+    </div>
+
+<div>If you don't have account, please sign in: <a href="{% url 'signin' %}">Sign In</a></div>
+{% endblock content %}
